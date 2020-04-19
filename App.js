@@ -1,38 +1,22 @@
 import React, {Component} from 'react';
-import {View,StyleSheet,ActivityIndicator} from 'react-native';
-import Login from './app/views/login/Login'
-import store from './app/Redux/store.js'
-import {startUpPageAtion} from './app/Redux/actionCreators'
-
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from "@react-navigation/stack";
+import {ReduxScreen} from "./app/views/bases/ReduxScreen";
+import HomeScreen from "./app/views/Home/HomeScreen";
+import {AppRegistry} from "react-native";
+const Stack = createStackNavigator();
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showLoading: false
-    }
-  }
-  componentDidMount() {
   }
   render() {
     return (
-      <View style={styles.container}>
-       <Login />
-      {/*  {this.state.showLoading?(<View style={[styles.loading]} hidden={false}>
-          <ActivityIndicator size="large" color="#FF555C" marginTop={-30}/>
-        </View>): null}*/}
-      </View>
+      <NavigationContainer initialRouteName={'HomeScreen'}>
+        <Stack.Navigator>
+          <Stack.Screen name={'HomeScreen'} component={HomeScreen}/>
+          <Stack.Screen name={'ReduxScreen'} component={ReduxScreen}/>
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-  },
-  loading: {
-    ...StyleSheet.absoluteFill,
-    flex: 1,
-    zIndex:9999,
-    backgroundColor: 'rgba(221,221,221,0.5)',
-    justifyContent: 'center'
-  }
-});

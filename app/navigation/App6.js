@@ -12,7 +12,7 @@ import React,{Component} from 'react'
 import {View,Text, Button} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-import {localStorage} from './util'
+import {localStorage} from '../util'
 
 // 用户登陆前显示的屏幕
 class SplashScreen extends Component {
