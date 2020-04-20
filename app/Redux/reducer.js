@@ -1,17 +1,25 @@
-// 定义一个参数
-import {IS_LOADING} from "./actionTypes";
+/**
+ * reducer函数：根据旧的state和指定的action处理返回行的state
+ */
+import {INCREMENT, DECREMENT,  ISLOADING} from "./actionTypes";
 
 const defaultState = {
-    isLoading: true,
-    userToken: false,
+  number: 0,
+  isLoading: false
 };
 
-export default (state = defaultState, action) => {
-    if (action.type === IS_LOADING){
-        let newState = JSON.parse(JSON.stringify(state));
-        newState.isLoading = action.value.isLoading;
-        newState.userToken = action.value.userToken;
-        return newState;
-    }
-    return state
+export default function count(state = defaultState, action) {
+  switch (action.type) {
+    case INCREMENT:
+      state.number += action.number;
+      return state;
+    case DECREMENT:
+      state.number -= action.number;
+      return state;
+    case ISLOADING:
+      state.isLoading = action.value;
+      return state;
+    default:
+      return state;
+  }
 }

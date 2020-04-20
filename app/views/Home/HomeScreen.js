@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {View, Button} from 'react-native';
 import {Constant} from "../../util/Constant";
 
-export default class HomeScreen extends Component {
+export class HomeScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {};

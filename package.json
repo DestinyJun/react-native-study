@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start --port 8081 --host 0.0.0.0",
+    "start": "react-native start --port 8082 --host 0.0.0.0",
     "build:iconfont": "iconfonttojson ./font/iconfont.css",
     "test": "jest",
     "lint": "eslint ."
@@ -29,7 +29,9 @@
     "react-native-shadow-cards": "^1.0.2",
     "react-native-switch-selector": "^2.0.3",
     "react-native-vector-icons": "^6.6.0",
-    "redux": "^4.0.5"
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.3",
